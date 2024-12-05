@@ -83,3 +83,5 @@ ax.set_title("Kontribusi Pengguna terhadap Total Peminjaman Sepeda", fontsize=16
 ax.set_xlabel("Tipe Pengguna", fontsize=12)
 ax.set_ylabel("Persentase Kontribusi", fontsize=12)
 st.pyplot(fig)
+
+pip freeze > requirements.tx
