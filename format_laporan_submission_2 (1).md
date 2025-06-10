@@ -167,11 +167,11 @@ Jumlah data: 9.742 baris
       ```
    Berdasarkan histori pengguna, sistem mendeteksi bahwa pengguna menyukai film Jumanji (1995) yang bergenre Adventure, Children, Fantasy.
 
-   ![Jumanji 1995](https://github.com/user-attachments/assets/5cdaf58b-4e5d-414c-b53f-128e00a0ac9a)
+   ![Jumanji 1995](images/Jumanji1995.png)
    
    Sebagai hasilnya, berikut adalah Top-5 rekomendasi berdasarkan Content-Based Filtering:
    
-   ![Top-5](https://github.com/user-attachments/assets/c33f4537-99e0-45dc-93dc-81b2e8e2f1e3)
+   ![Top-5](images/Top5.png)
 
    Terlihat bahwa film-film dengan genre serupa (Adventure, Children, Fantasy) mendominasi hasil rekomendasi. Hal ini mencerminkan pendekatan content-based yang menggunakan kemiripan konten sebagai dasar rekomendasi.
   
@@ -215,7 +215,7 @@ Jumlah data: 9.742 baris
    Sistem menganalisis data rating dan menemukan bahwa genre yang paling tinggi ratingnya adalah Comedy dan Drama.
    Berdasarkan hasil ini, berikut adalah Top-10 film yang direkomendasikan menggunakan Collaborative Filtering:
    
-   ![Top-10](https://github.com/user-attachments/assets/3a724a5c-6939-4973-827d-81f884bfd462)
+   ![Top-10](images/Top10.png)
    
    Rekomendasi ini menyajikan film-film dengan genre yang paling banyak disukai oleh komunitas pengguna lain, tanpa melihat isi konten film itu sendiri.
    
@@ -240,7 +240,7 @@ Precision mengukur seberapa banyak rekomendasi yang benar-benar relevan dibandin
    Dalam eksperimen ini, sistem memberikan **Top-5 rekomendasi** berdasarkan film favorit pengguna, yaitu **Jumanji (1995)** dengan genre *Adventure, Children, Fantasy*. Berikut hasil rekomendasinya:
    Dari 5 film yang direkomendasikan, terdapat **3 film yang memiliki genre serupa**, sehingga dapat dihitung:
    
-   ![Top-5](https://github.com/user-attachments/assets/567c7964-0f51-41f6-8818-e45afea9a17f)
+   ![Top-5](images/Top5.png)
    
    Dari 5 film yang direkomendasikan, terdapat 3 film yang memiliki genre yang sama atau serupa.
    > **Precision = (Jumlah item relevan yang direkomendasikan) / (Jumlah total item yang direkomendasikan)**
@@ -252,7 +252,7 @@ Precision mengukur seberapa banyak rekomendasi yang benar-benar relevan dibandin
    RMSE mengukur selisih rata-rata kuadrat antara rating aktual dan prediksi dari model. Metrik ini sangat umum digunakan dalam sistem rekomendasi karena mampu memberikan penalti lebih besar terhadap prediksi yang jauh dari nilai sebenarnya.
    **Berikut Formula RMSE:**
    
-   ![Formula RMSE](https://github.com/user-attachments/assets/ae77587b-da84-4818-8e24-6152dc723d91)
+   ![Formula RMSE](images/RumusRMSE.png)
 
    
    **Di mana:**
@@ -268,7 +268,7 @@ Precision mengukur seberapa banyak rekomendasi yang benar-benar relevan dibandin
 
   Implementasi RMSE pada model dilakukan dengan menambahkan parameter `metrics=[tf.keras.metrics.RootMeanSquaredError()]` pada tahap  kompilasi model.
 
-  ![Gambar Model Compile](https://github.com/user-attachments/assets/ca70954e-b15d-4320-b293-06cae489083d)
+  ![Gambar Model Compile](images/ModelCompile.png)
   
   - **Hasil akhir setelah 100 epoch training:**
       * **Training RMSE**: sekitar **0.0307**
@@ -281,11 +281,10 @@ Precision mengukur seberapa banyak rekomendasi yang benar-benar relevan dibandin
     ```
   - **Visualisasi plot training dan validation RMSE**
     
-    ![Visualisasi](https://github.com/user-attachments/assets/dde609c3-bc99-48f5-b944-df356cda46ce)
+    ![Visualisasi](images/DiagramRMSE.png)
 
     Berdasarkan grafik, terlihat bahwa model mencapai kestabilan setelah beberapa epoch. RMSE pada data training sangat rendah, sementara RMSE pada data validasi berada di kisaran 0.23. Hal ini dapat mengindikasikan adanya perbedaan performa yang masih bisa dioptimalkan antara training dan validasi
 
 3. **Kesimpulan Evaluasi**
    * Sistem **Content-Based** memberikan Precision sebesar **60%**, yang menunjukkan bahwa mayoritas rekomendasi sesuai dengan preferensi pengguna.
     * Sistem **Collaborative Filtering** menghasilkan RMSE **0.0307 (training)** dan **0.2379 (validation)**, yang menunjukkan model cukup baik dalam mempelajari data pelatihan, namun ada ruang untuk perbaikan dalam generalisasi.
-
